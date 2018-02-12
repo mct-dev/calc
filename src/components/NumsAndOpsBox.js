@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { setCurrNum } from "../store/reducers";
+import {
+  calculateResult,
+  setPrevNum,
+  setCurrNum,
+  setOper,
+  setResult
+} from "../store/reducers";
 import styles from "./numsAndOps.scss";
 
 const Btn = ({ onClick, char, type = null, style, ...rest }) => {
@@ -42,21 +48,49 @@ export class NumsAndOpsBox extends Component {
     this.nums = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."];
     this.equals = "=";
     this.clear = "AC";
+    this.calculate = this.calculate.bind(this);
   }
   calculate(char) {
-    console.log("char: ", char);
+    console.log(char);
     let opers = Object.keys(this.ops).map(key => this.ops[key]);
     opers.forEach(op => {
-      char === op ? console.log("operation found: ", char) : false;
+      if (char === op) {
+        console.log("oper found");
+        if (this.props.state.currNum !== null) {
+          this.props.setOper(char);
+        }
+      }
     });
     this.nums.forEach(num => {
-      char === num ? console.log("number found: ", char) : false;
+      if (char === num) {
+        console.log("num found");
+        let num1 = this.props.state.currNum;
+        let num2 = this.props.state.prevNum;
+        let oper = this.props.state.operation;
+
+        if (num1 === null) {
+          this.props.setCurrNum(char);
+        } else if (num1 !== null && oper === null) {
+          this.props.setCurrNum(num1 + char);
+        } else if (num1 !== null && oper !== null) {
+          this.props.setPrevNum(num1);
+          this.props.setCurrNum(char);
+        }
+      }
     });
-    char === this.clear ? console.log("clear found: ", char) : false;
-    char === this.equals ? console.log("equals found: ", char) : false;
-    this.props.setCurrNum(char);
+    if (char === this.clear) {
+      console.log("clear found");
+      this.props.setResult(0);
+      this.props.setCurrNum(null);
+      this.props.setPrevNum(null);
+      this.props.setOper(null);
+    }
+    if (char === this.equals) {
+      console.log("equals found");
+    }
   }
   render() {
+    let calculate = this.calculate;
     return (
       <div>
         <div className="columns is-mobile">
@@ -79,35 +113,36 @@ export class NumsAndOpsBox extends Component {
           />
         </div>
         <div className="columns is-mobile">
-          <Btn onClick={() => this.calculate("7")} char="7" />
-          <Btn onClick={() => this.calculate("8")} char="8" />
-          <Btn onClick={() => this.calculate("9")} char="9" />
+          {["7", "8", "9"].map(num => (
+            <Btn onClick={() => calculate(num)} char={num} />
+          ))}
           <Btn
             onClick={() => this.calculate(this.ops.mult)}
             char={this.ops.mult}
           />
         </div>
         <div className="columns is-mobile">
-          <Btn onClick={() => this.calculate("4")} char="4" />
-          <Btn onClick={() => this.calculate("5")} char="5" />
-          <Btn onClick={() => this.calculate("6")} char="6" />
+          {["4", "5", "6"].map(num => (
+            <Btn onClick={() => calculate(num)} char={num} />
+          ))}
           <Btn
             onClick={() => this.calculate(this.ops.divide)}
             char={this.ops.divide}
           />
         </div>
         <div className="columns is-mobile">
-          <Btn onClick={() => this.calculate("1")} char="1" />
-          <Btn onClick={() => this.calculate("2")} char="2" />
-          <Btn onClick={() => this.calculate("3")} char="3" />
+          {["1", "2", "3"].map(num => (
+            <Btn onClick={() => calculate(num)} char={num} />
+          ))}
           <Btn
             onClick={() => this.calculate(this.ops.minus)}
             char={this.ops.minus}
           />
         </div>
         <div className="columns is-mobile">
-          <Btn onClick={() => this.calculate("0")} char="0" />
-          <Btn onClick={() => this.calculate(".")} char="." />
+          {["0", "."].map(num => (
+            <Btn onClick={() => calculate(num)} char={num} />
+          ))}
           <Btn
             onClick={() => this.calculate(this.equals)}
             style={{ backgroundColor: "blue", color: "white" }}
@@ -125,7 +160,12 @@ export class NumsAndOpsBox extends Component {
 
 export default connect(
   state => ({
-    state: state.calc
+    state: state
   }),
-  dispatch => ({ setCurrNum: newNum => dispatch(setCurrNum(newNum)) })
+  dispatch => ({
+    setCurrNum: newNum => dispatch(setCurrNum(newNum)),
+    setOper: value => dispatch(setOper(value)),
+    setPrevNum: value => dispatch(setPrevNum(value)),
+    calculateResult: calculateResult
+  })
 )(NumsAndOpsBox);

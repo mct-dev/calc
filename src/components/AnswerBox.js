@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setResult } from "../store/reducers";
 
-export default class AnswerBox extends Component {
+class AnswerBox extends Component {
   render() {
     const styles = {
       margin: "5px"
@@ -9,14 +11,18 @@ export default class AnswerBox extends Component {
       <div className="columns is-mobile">
         <input
           style={styles}
-          id="currOperation"
           className="column input"
           type="text"
-          placeholder="words"
           readOnly
+          value={this.props.result}
         />
         <input style={styles} className="column input" type="text" readOnly />
       </div>
     );
   }
 }
+
+export default connect(
+  state => ({ result: state.result }),
+  dispatch => ({ setResult: value => dispatch(setResult(value)) })
+)(AnswerBox);
