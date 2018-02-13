@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "jest",
-    "start": "parcel ./index.html"
+    "start": "npx parcel ./index.html",
+    "build": "npx parcel build ./index.html"
   },
   "author": "",
   "license": "ISC",

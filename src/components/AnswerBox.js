@@ -6,12 +6,14 @@ class AnswerBox extends Component {
   render() {
     const styles = {
       headers: {
-        margin: 0,
-        textAlign: "center"
+        marginBottom: 0,
+        textAlign: "center",
+        textDecoration: "underline"
       },
       inputs: {},
       input: {
-        margin: "5px 5px 20px 5px"
+        margin: "0 5px 40px 5px",
+        border: "none"
       }
     };
     let currEval =
@@ -19,19 +21,19 @@ class AnswerBox extends Component {
     return (
       <div>
         <div style={styles.headers} className="columns is-mobile">
-          <h4 className="column label">Equation:</h4>
-          <h4 className="column label">Result:</h4>
+          <h4 className="column label">Equation</h4>
+          <h4 className="column label">Result</h4>
         </div>
         <div style={styles.inputs} className="columns is-mobile">
           <input
-            style={styles.input}
+            style={{ textAlign: "center", ...styles.input }}
             className="column input"
             type="text"
             value={currEval}
             readOnly
           />
           <input
-            style={styles.input}
+            style={{ textAlign: "center", ...styles.input }}
             className="column input"
             type="text"
             readOnly

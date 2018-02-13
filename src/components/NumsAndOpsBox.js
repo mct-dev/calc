@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import styles from "./numsAndOps.scss";
 import { ops, nums, equals, clear, delBtn, calc } from "../store/reducers";
 import { equal } from "assert";
 
@@ -45,7 +44,7 @@ export class NumsAndOpsBox extends Component {
     return (
       <div>
         <div className="columns is-mobile">
-          <Btn
+          {/* <Btn
             style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.leftParen.char)}
             char={this.ops.leftParen.char}
@@ -54,7 +53,7 @@ export class NumsAndOpsBox extends Component {
             style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.rightParen.char)}
             char={this.ops.rightParen.char}
-          />
+          /> */}
           <Btn
             style={{ backgroundColor: "#9A6E7E", color: "white" }}
             onClick={() => this.calculate(this.delBtn)}
