@@ -15,11 +15,11 @@ class AnswerBox extends Component {
       }
     };
     let currEval =
-      this.props.currEval.length > 0 ? this.props.currEval.join(" ") : " - ";
+      this.props.currEval.length > 0 ? this.props.currEval.join("") : " - ";
     return (
       <div>
         <div style={styles.headers} className="columns is-mobile">
-          <h4 className="column label">Current Equation:</h4>
+          <h4 className="column label">Equation:</h4>
           <h4 className="column label">Result:</h4>
         </div>
         <div style={styles.inputs} className="columns is-mobile">

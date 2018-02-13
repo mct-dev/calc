@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styles from "./numsAndOps.scss";
-import { calc } from "../store/reducers";
+import { ops, nums, equals, clear, delBtn, calc } from "../store/reducers";
+import { equal } from "assert";
 
 const Btn = ({ onClick, char, type = null, style, ...rest }) => {
   const styles = {
@@ -29,18 +30,11 @@ const Btn = ({ onClick, char, type = null, style, ...rest }) => {
 export class NumsAndOpsBox extends Component {
   constructor(props) {
     super(props);
-    this.ops = {
-      leftParen: { char: "(", oper: "(" },
-      rightParen: { char: ")", oper: ")" },
-      percent: { char: "\u0025", oper: "%" },
-      mult: { char: "\u00D7", oper: "*" },
-      divide: { char: "\u00f7", oper: "/" },
-      minus: { char: "\u2796", oper: "-" },
-      plus: { char: "\u2795", oper: "+" }
-    };
-    this.nums = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."];
-    this.equals = "=";
-    this.clear = "AC";
+    this.ops = ops;
+    this.nums = nums;
+    this.delBtn = delBtn;
+    this.equals = equals;
+    this.clear = clear;
     this.calculate = this.calculate.bind(this);
   }
   calculate(char) {
@@ -52,19 +46,22 @@ export class NumsAndOpsBox extends Component {
       <div>
         <div className="columns is-mobile">
           <Btn
+            style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.leftParen.char)}
             char={this.ops.leftParen.char}
           />
           <Btn
+            style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.rightParen.char)}
             char={this.ops.rightParen.char}
           />
           <Btn
-            onClick={() => this.calculate(this.ops.percent.char)}
-            char={this.ops.percent.char}
+            style={{ backgroundColor: "#9A6E7E", color: "white" }}
+            onClick={() => this.calculate(this.delBtn)}
+            char={this.delBtn}
           />
           <Btn
-            style={{ color: "blue" }}
+            style={{ backgroundColor: "#4B4E6D", color: "white" }}
             onClick={() => this.calculate(this.clear)}
             char={this.clear}
           />
@@ -73,11 +70,13 @@ export class NumsAndOpsBox extends Component {
           {["7", "8", "9"].map((num, index) => (
             <Btn
               key={index + "-789"}
+              style={{ backgroundColor: "#DFDFE1" }}
               onClick={() => calculate(num)}
               char={num}
             />
           ))}
           <Btn
+            style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.mult.char)}
             char={this.ops.mult.char}
           />
@@ -86,11 +85,13 @@ export class NumsAndOpsBox extends Component {
           {["4", "5", "6"].map((num, index) => (
             <Btn
               key={index + "-456"}
+              style={{ backgroundColor: "#DFDFE1" }}
               onClick={() => calculate(num)}
               char={num}
             />
           ))}
           <Btn
+            style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.divide.char)}
             char={this.ops.divide.char}
           />
@@ -99,11 +100,13 @@ export class NumsAndOpsBox extends Component {
           {["1", "2", "3"].map((num, index) => (
             <Btn
               key={index + "-123"}
+              style={{ backgroundColor: "#DFDFE1" }}
               onClick={() => calculate(num)}
               char={num}
             />
           ))}
           <Btn
+            style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.minus.char)}
             char={this.ops.minus.char}
           />
@@ -112,16 +115,18 @@ export class NumsAndOpsBox extends Component {
           {["0", "."].map((num, index) => (
             <Btn
               key={index + "-0."}
+              style={{ backgroundColor: "#DFDFE1" }}
               onClick={() => calculate(num)}
               char={num}
             />
           ))}
           <Btn
             onClick={() => this.calculate(this.equals)}
-            style={{ backgroundColor: "blue", color: "white" }}
+            style={{ backgroundColor: "#4B4E6D", color: "white" }}
             char={this.equals}
           />
           <Btn
+            style={{ backgroundColor: "#C0C0C3" }}
             onClick={() => this.calculate(this.ops.plus.char)}
             char={this.ops.plus.char}
           />

@@ -29,47 +29,40 @@ export const clearEval = () => {
   };
 };
 
-let ops = {
+export let ops = {
   leftParen: { char: "(", oper: "(" },
   rightParen: { char: ")", oper: ")" },
   percent: { char: "\u0025", oper: "%" },
   mult: { char: "\u00D7", oper: "*" },
   divide: { char: "\u00f7", oper: "/" },
-  minus: { char: "\u2796", oper: "-" },
-  plus: { char: "\u2795", oper: "+" }
+  minus: { char: "\u2212", oper: "-" },
+  plus: { char: "\u002B", oper: "+" }
 };
-let nums = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."];
-let equals = "=";
-let clear = "AC";
-
+export let nums = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."];
+export let equals = "=";
+export let clear = "AC";
+export let delBtn = "\u21E6";
 const calculateResult = () => {
   return (dispatch, getState) => {
     let { evalArray } = getState();
-    console.log(evalArray);
     let result;
     try {
       result = eval(evalArray.join(""));
-      console.log(result);
       dispatch(setResult(result));
-    } catch (err) {
-      console.log("nah bro. didn't work");
-    }
+    } catch (err) {}
   };
 };
 
 export const calc = char => {
   return (dispatch, getState) => {
     let { evalArray } = getState();
-    // if char is a number
+    // if char is a number we can always push to evalArray
     if (nums.filter(num => num === char).length > 0) {
-      /* 
-       * Should be able to push to eval regardless of what 
-       * chars are already in there.
-      */
       dispatch(addToEval(char));
       dispatch(calculateResult());
       // else if char is an operator
     } else if (
+      //TODO: add in functionality for parentheses
       Object.keys(ops).filter(opKey => ops[opKey].char === char).length > 0
     ) {
       let newOper =
@@ -82,8 +75,7 @@ export const calc = char => {
             opKey => ops[opKey].oper === evalArray[evalArray.length - 1]
           ).length > 0
         ) {
-          dispatch(popEval);
-          let oper = Object.keys(ops).filter(key => ops[key].char === char);
+          dispatch(popEval());
           dispatch(addToEval(newOper));
           // otherwise just add it to eval
         } else {
@@ -96,8 +88,10 @@ export const calc = char => {
       dispatch(clearEval());
     } else if (clear === char) {
       dispatch(clearAll());
+    } else if ((delBtn = char)) {
+      dispatch(popEval());
+      dispatch(calculateResult());
     } else {
-      console.log("something went wrong in calc()");
     }
   };
 };
