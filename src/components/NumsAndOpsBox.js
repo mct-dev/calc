@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
-import {
-  calculateResult,
-  setPrevNum,
-  setCurrNum,
-  setOper,
-  setResult
-} from "../store/reducers";
 import styles from "./numsAndOps.scss";
+import { calc } from "../store/reducers";
 
 const Btn = ({ onClick, char, type = null, style, ...rest }) => {
   const styles = {
@@ -37,13 +30,13 @@ export class NumsAndOpsBox extends Component {
   constructor(props) {
     super(props);
     this.ops = {
-      leftParen: "(",
-      rightParen: ")",
-      percent: "\u0025",
-      mult: "\u00D7",
-      divide: "\u00f7",
-      minus: "\u2796",
-      plus: "\u2795"
+      leftParen: { char: "(", oper: "(" },
+      rightParen: { char: ")", oper: ")" },
+      percent: { char: "\u0025", oper: "%" },
+      mult: { char: "\u00D7", oper: "*" },
+      divide: { char: "\u00f7", oper: "/" },
+      minus: { char: "\u2796", oper: "-" },
+      plus: { char: "\u2795", oper: "+" }
     };
     this.nums = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."];
     this.equals = "=";
@@ -51,43 +44,7 @@ export class NumsAndOpsBox extends Component {
     this.calculate = this.calculate.bind(this);
   }
   calculate(char) {
-    console.log(char);
-    let opers = Object.keys(this.ops).map(key => this.ops[key]);
-    opers.forEach(op => {
-      if (char === op) {
-        console.log("oper found");
-        if (this.props.state.currNum !== null) {
-          this.props.setOper(char);
-        }
-      }
-    });
-    this.nums.forEach(num => {
-      if (char === num) {
-        console.log("num found");
-        let num1 = this.props.state.currNum;
-        let num2 = this.props.state.prevNum;
-        let oper = this.props.state.operation;
-
-        if (num1 === null) {
-          this.props.setCurrNum(char);
-        } else if (num1 !== null && oper === null) {
-          this.props.setCurrNum(num1 + char);
-        } else if (num1 !== null && oper !== null) {
-          this.props.setPrevNum(num1);
-          this.props.setCurrNum(char);
-        }
-      }
-    });
-    if (char === this.clear) {
-      console.log("clear found");
-      this.props.setResult(0);
-      this.props.setCurrNum(null);
-      this.props.setPrevNum(null);
-      this.props.setOper(null);
-    }
-    if (char === this.equals) {
-      console.log("equals found");
-    }
+    this.props.calc(char);
   }
   render() {
     let calculate = this.calculate;
@@ -95,16 +52,16 @@ export class NumsAndOpsBox extends Component {
       <div>
         <div className="columns is-mobile">
           <Btn
-            onClick={() => this.calculate(this.ops.leftParen)}
-            char={this.ops.leftParen}
+            onClick={() => this.calculate(this.ops.leftParen.char)}
+            char={this.ops.leftParen.char}
           />
           <Btn
-            onClick={() => this.calculate(this.ops.rightParen)}
-            char={this.ops.rightParen}
+            onClick={() => this.calculate(this.ops.rightParen.char)}
+            char={this.ops.rightParen.char}
           />
           <Btn
-            onClick={() => this.calculate(this.ops.percent)}
-            char={this.ops.percent}
+            onClick={() => this.calculate(this.ops.percent.char)}
+            char={this.ops.percent.char}
           />
           <Btn
             style={{ color: "blue" }}
@@ -113,35 +70,51 @@ export class NumsAndOpsBox extends Component {
           />
         </div>
         <div className="columns is-mobile">
-          {["7", "8", "9"].map(num => (
-            <Btn onClick={() => calculate(num)} char={num} />
+          {["7", "8", "9"].map((num, index) => (
+            <Btn
+              key={index + "-789"}
+              onClick={() => calculate(num)}
+              char={num}
+            />
           ))}
           <Btn
-            onClick={() => this.calculate(this.ops.mult)}
-            char={this.ops.mult}
+            onClick={() => this.calculate(this.ops.mult.char)}
+            char={this.ops.mult.char}
           />
         </div>
         <div className="columns is-mobile">
-          {["4", "5", "6"].map(num => (
-            <Btn onClick={() => calculate(num)} char={num} />
+          {["4", "5", "6"].map((num, index) => (
+            <Btn
+              key={index + "-456"}
+              onClick={() => calculate(num)}
+              char={num}
+            />
           ))}
           <Btn
-            onClick={() => this.calculate(this.ops.divide)}
-            char={this.ops.divide}
+            onClick={() => this.calculate(this.ops.divide.char)}
+            char={this.ops.divide.char}
           />
         </div>
         <div className="columns is-mobile">
-          {["1", "2", "3"].map(num => (
-            <Btn onClick={() => calculate(num)} char={num} />
+          {["1", "2", "3"].map((num, index) => (
+            <Btn
+              key={index + "-123"}
+              onClick={() => calculate(num)}
+              char={num}
+            />
           ))}
           <Btn
-            onClick={() => this.calculate(this.ops.minus)}
-            char={this.ops.minus}
+            onClick={() => this.calculate(this.ops.minus.char)}
+            char={this.ops.minus.char}
           />
         </div>
         <div className="columns is-mobile">
-          {["0", "."].map(num => (
-            <Btn onClick={() => calculate(num)} char={num} />
+          {["0", "."].map((num, index) => (
+            <Btn
+              key={index + "-0."}
+              onClick={() => calculate(num)}
+              char={num}
+            />
           ))}
           <Btn
             onClick={() => this.calculate(this.equals)}
@@ -149,8 +122,8 @@ export class NumsAndOpsBox extends Component {
             char={this.equals}
           />
           <Btn
-            onClick={() => this.calculate(this.ops.plus)}
-            char={this.ops.plus}
+            onClick={() => this.calculate(this.ops.plus.char)}
+            char={this.ops.plus.char}
           />
         </div>
       </div>
@@ -158,14 +131,14 @@ export class NumsAndOpsBox extends Component {
   }
 }
 
-export default connect(
-  state => ({
-    state: state
-  }),
-  dispatch => ({
-    setCurrNum: newNum => dispatch(setCurrNum(newNum)),
-    setOper: value => dispatch(setOper(value)),
-    setPrevNum: value => dispatch(setPrevNum(value)),
-    calculateResult: calculateResult
-  })
-)(NumsAndOpsBox);
+const mapDispatchToProps = dispatch => {
+  return {
+    calc: char => dispatch(calc(char))
+  };
+};
+const mapStateToProps = state => {
+  return {
+    state
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(NumsAndOpsBox);

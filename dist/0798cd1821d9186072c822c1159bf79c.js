@@ -1782,7 +1782,7 @@ if ('development' !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":48,"fbjs/lib/emptyObject":57,"fbjs/lib/invariant":54,"fbjs/lib/warning":55,"fbjs/lib/emptyFunction":53,"prop-types/checkPropTypes":47}],13:[function(require,module,exports) {
+},{"object-assign":48,"fbjs/lib/emptyObject":57,"fbjs/lib/invariant":54,"fbjs/lib/warning":55,"fbjs/lib/emptyFunction":53,"prop-types/checkPropTypes":47}],14:[function(require,module,exports) {
 'use strict';
 
 if ('development' === 'production') {
@@ -1824,7 +1824,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],59:[function(require,module,exports) {
+},{}],60:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -1899,7 +1899,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-},{"./emptyFunction":53}],61:[function(require,module,exports) {
+},{"./emptyFunction":53}],59:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2025,7 +2025,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],69:[function(require,module,exports) {
+},{}],70:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2048,7 +2048,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":76}],60:[function(require,module,exports) {
+},{"./isNode":76}],63:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2086,7 +2086,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":69}],63:[function(require,module,exports) {
+},{"./isTextNode":70}],61:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2111,7 +2111,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],18:[function(require,module,exports) {
+},{}],19:[function(require,module,exports) {
 /** @license React v16.2.0
  * react-dom.production.min.js
  *
@@ -2342,7 +2342,7 @@ var Sg={createPortal:Qg,findDOMNode:function(a){if(null==a)return null;if(1===a.
 E("40");return a._reactRootContainer?(Z.unbatchedUpdates(function(){Pg(null,null,a,!1,function(){a._reactRootContainer=null})}),!0):!1},unstable_createPortal:Qg,unstable_batchedUpdates:tc,unstable_deferredUpdates:Z.deferredUpdates,flushSync:Z.flushSync,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:mb,EventPluginRegistry:Va,EventPropagators:Cb,ReactControlledComponent:qc,ReactDOMComponentTree:sb,ReactDOMEventListener:xd}};
 Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",rendererPackageName:"react-dom"});var Tg=Object.freeze({default:Sg}),Ug=Tg&&Sg||Tg;module.exports=Ug["default"]?Ug["default"]:Ug;
 
-},{"react":13,"fbjs/lib/ExecutionEnvironment":58,"object-assign":48,"fbjs/lib/emptyFunction":53,"fbjs/lib/EventListener":59,"fbjs/lib/getActiveElement":61,"fbjs/lib/shallowEqual":62,"fbjs/lib/containsNode":60,"fbjs/lib/focusNode":63,"fbjs/lib/emptyObject":57}],70:[function(require,module,exports) {
+},{"react":14,"fbjs/lib/ExecutionEnvironment":58,"object-assign":48,"fbjs/lib/emptyFunction":53,"fbjs/lib/EventListener":60,"fbjs/lib/getActiveElement":59,"fbjs/lib/shallowEqual":62,"fbjs/lib/containsNode":63,"fbjs/lib/focusNode":61,"fbjs/lib/emptyObject":57}],71:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2410,7 +2410,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":70}],71:[function(require,module,exports) {
+},{"./hyphenate":71}],69:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -2478,7 +2478,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":71}],19:[function(require,module,exports) {
+},{"./camelize":69}],18:[function(require,module,exports) {
 /** @license React v16.2.0
  * react-dom.development.js
  *
@@ -17836,7 +17836,7 @@ if ('development' !== "production") {
     module.exports = reactDom;
   })();
 }
-},{"react":13,"fbjs/lib/invariant":54,"fbjs/lib/warning":55,"fbjs/lib/ExecutionEnvironment":58,"object-assign":48,"fbjs/lib/emptyFunction":53,"fbjs/lib/EventListener":59,"fbjs/lib/getActiveElement":61,"fbjs/lib/shallowEqual":62,"fbjs/lib/containsNode":60,"fbjs/lib/focusNode":63,"fbjs/lib/emptyObject":57,"prop-types/checkPropTypes":47,"fbjs/lib/hyphenateStyleName":64,"fbjs/lib/camelizeStyleName":65}],14:[function(require,module,exports) {
+},{"react":14,"fbjs/lib/invariant":54,"fbjs/lib/warning":55,"fbjs/lib/ExecutionEnvironment":58,"object-assign":48,"fbjs/lib/emptyFunction":53,"fbjs/lib/EventListener":60,"fbjs/lib/getActiveElement":59,"fbjs/lib/shallowEqual":62,"fbjs/lib/containsNode":63,"fbjs/lib/focusNode":61,"fbjs/lib/emptyObject":57,"prop-types/checkPropTypes":47,"fbjs/lib/hyphenateStyleName":64,"fbjs/lib/camelizeStyleName":65}],13:[function(require,module,exports) {
 'use strict';
 
 function checkDCE() {
@@ -17872,7 +17872,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.production.min.js":18,"./cjs/react-dom.development.js":19}],44:[function(require,module,exports) {
+},{"./cjs/react-dom.production.min.js":19,"./cjs/react-dom.development.js":18}],44:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -18628,7 +18628,7 @@ function createProvider() {
 }
 
 exports.default = createProvider();
-},{"react":13,"prop-types":43,"../utils/PropTypes":23,"../utils/warning":24}],50:[function(require,module,exports) {
+},{"react":14,"prop-types":43,"../utils/PropTypes":23,"../utils/warning":24}],49:[function(require,module,exports) {
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -18695,7 +18695,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],49:[function(require,module,exports) {
+},{}],50:[function(require,module,exports) {
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -19178,7 +19178,7 @@ selectorFactory) {
     return (0, _hoistNonReactStatics2.default)(Connect, WrappedComponent);
   };
 }
-},{"hoist-non-react-statics":50,"invariant":49,"react":13,"../utils/Subscription":25,"../utils/PropTypes":23}],26:[function(require,module,exports) {
+},{"hoist-non-react-statics":49,"invariant":50,"react":14,"../utils/Subscription":25,"../utils/PropTypes":23}],26:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19246,7 +19246,7 @@ var freeSelf = typeof self == 'object' && self && self.Object === Object && self
 var root = _freeGlobal2.default || freeSelf || Function('return this')();
 
 exports.default = root;
-},{"./_freeGlobal.js":78}],73:[function(require,module,exports) {
+},{"./_freeGlobal.js":78}],72:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19263,7 +19263,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Symbol = _root2.default.Symbol;
 
 exports.default = Symbol;
-},{"./_root.js":77}],74:[function(require,module,exports) {
+},{"./_root.js":77}],73:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19320,7 +19320,7 @@ function getRawTag(value) {
 }
 
 exports.default = getRawTag;
-},{"./_Symbol.js":73}],75:[function(require,module,exports) {
+},{"./_Symbol.js":72}],74:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19391,7 +19391,7 @@ function baseGetTag(value) {
 }
 
 exports.default = baseGetTag;
-},{"./_Symbol.js":73,"./_getRawTag.js":74,"./_objectToString.js":75}],72:[function(require,module,exports) {
+},{"./_Symbol.js":72,"./_getRawTag.js":73,"./_objectToString.js":74}],75:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19429,7 +19429,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var getPrototype = (0, _overArg2.default)(Object.getPrototypeOf, Object);
 
 exports.default = getPrototype;
-},{"./_overArg.js":72}],68:[function(require,module,exports) {
+},{"./_overArg.js":75}],68:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19889,7 +19889,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],39:[function(require,module,exports) {
+},{}],38:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20035,7 +20035,7 @@ function combineReducers(reducers) {
     return hasChanged ? nextState : state;
   };
 }
-},{"./createStore":37,"lodash-es/isPlainObject":56,"./utils/warning":42}],38:[function(require,module,exports) {
+},{"./createStore":37,"lodash-es/isPlainObject":56,"./utils/warning":42}],39:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20196,7 +20196,7 @@ function applyMiddleware() {
     };
   };
 }
-},{"./compose":41}],35:[function(require,module,exports) {
+},{"./compose":41}],34:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20245,7 +20245,7 @@ exports.combineReducers = _combineReducers2.default;
 exports.bindActionCreators = _bindActionCreators2.default;
 exports.applyMiddleware = _applyMiddleware2.default;
 exports.compose = _compose2.default;
-},{"./createStore":37,"./combineReducers":39,"./bindActionCreators":38,"./applyMiddleware":40,"./compose":41,"./utils/warning":42}],33:[function(require,module,exports) {
+},{"./createStore":37,"./combineReducers":38,"./bindActionCreators":39,"./applyMiddleware":40,"./compose":41,"./utils/warning":42}],33:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20268,7 +20268,7 @@ function verifyPlainObject(value, displayName, methodName) {
     (0, _warning2.default)(methodName + '() in ' + displayName + ' must return a plain object. Instead received ' + value + '.');
   }
 }
-},{"lodash-es/isPlainObject":56,"./warning":24}],32:[function(require,module,exports) {
+},{"lodash-es/isPlainObject":56,"./warning":24}],31:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20380,7 +20380,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 }
 
 exports.default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
-},{"redux":35,"./wrapMapToProps":32}],28:[function(require,module,exports) {
+},{"redux":34,"./wrapMapToProps":31}],28:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20402,7 +20402,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 }
 
 exports.default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
-},{"./wrapMapToProps":32}],29:[function(require,module,exports) {
+},{"./wrapMapToProps":31}],29:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20470,7 +20470,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 }
 
 exports.default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
-},{"../utils/verifyPlainObject":33}],31:[function(require,module,exports) {
+},{"../utils/verifyPlainObject":33}],32:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20619,7 +20619,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
   return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
-},{"./verifySubselectors":31}],22:[function(require,module,exports) {
+},{"./verifySubselectors":32}],22:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20813,7 +20813,7 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports.default = thunk;
-},{}],34:[function(require,module,exports) {
+},{}],35:[function(require,module,exports) {
 "use strict";
 
 var compose = require('redux').compose;
@@ -20835,7 +20835,7 @@ exports.devToolsEnhancer = (
     function() { return function(noop) { return noop; } }
 );
 
-},{"redux":35}],9:[function(require,module,exports) {
+},{"redux":34}],11:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20844,72 +20844,121 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var setOper = exports.setOper = function setOper(value) {
-  return {
-    type: "SET_OPER",
-    payload: value
-  };
-};
-
 var setResult = exports.setResult = function setResult(value) {
   return {
     type: "SET_RESULT",
     payload: value
   };
 };
-
-var setCurrNum = exports.setCurrNum = function setCurrNum(newNum) {
+var addToEval = exports.addToEval = function addToEval(char) {
   return {
-    type: "CHANGE_CN",
-    payload: newNum
+    type: "ADD_TO_EVAL",
+    payload: char
+  };
+};
+var popEval = exports.popEval = function popEval() {
+  return {
+    type: "POP_EVAL",
+    payload: null
+  };
+};
+var clearAll = exports.clearAll = function clearAll() {
+  return {
+    type: "CLEAR_All",
+    payload: null
+  };
+};
+var clearEval = exports.clearEval = function clearEval() {
+  return {
+    type: "CLEAR_EVAL",
+    payload: null
   };
 };
 
-var setPrevNum = exports.setPrevNum = function setPrevNum(newNum) {
-  return {
-    type: "CHANGE_PN",
-    payload: newNum
-  };
+var ops = {
+  leftParen: { char: "(", oper: "(" },
+  rightParen: { char: ")", oper: ")" },
+  percent: { char: "%", oper: "%" },
+  mult: { char: "\xD7", oper: "*" },
+  divide: { char: "\xF7", oper: "/" },
+  minus: { char: "\u2796", oper: "-" },
+  plus: { char: "\u2795", oper: "+" }
 };
+var nums = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."];
+var equals = "=";
+var clear = "AC";
 
-var calculateResult = exports.calculateResult = function calculateResult() {
+var calculateResult = function calculateResult() {
   return function (dispatch, getState) {
-    var num1 = getState(currNum);
-    var num2 = getState(prevNum);
-    var result = getState(result);
-    var oper = getState(operation);
+    var _getState = getState(),
+        evalArray = _getState.evalArray;
 
-    if (num1 === null && num2 === null) {
-      dispatch(setResult(0));
-    } else if (num1 !== null && num2 === null) {
-      undefined.props.setResult(num1);
-    } else if (num1 !== null && num2 !== null && oper !== null) {
-      switch (oper) {
-        case undefined.ops.mult:
-          undefined.props.setResult(num2 * num1);
-          return num2 * num1;
-        case undefined.ops.divide:
-          undefined.props.setResult(num2 / num1);
-          return num2 / num1;
-        case undefined.ops.minus:
-          undefined.props.setResult(num2 - num1);
-          return num2 - num1;
-        case undefined.ops.plus:
-          undefined.props.setResult(num2 + num1);
-          return num2 + num1;
-        default:
-          console.log("no case found in calculateResult()");
-          return 0;
+    console.log(evalArray);
+    var result = void 0;
+    try {
+      result = eval(evalArray.join(""));
+      console.log(result);
+      dispatch(setResult(result));
+    } catch (err) {
+      console.log("nah bro. didn't work");
+    }
+  };
+};
+
+var calc = exports.calc = function calc(char) {
+  return function (dispatch, getState) {
+    var _getState2 = getState(),
+        evalArray = _getState2.evalArray;
+    // if char is a number
+
+
+    if (nums.filter(function (num) {
+      return num === char;
+    }).length > 0) {
+      /* 
+       * Should be able to push to eval regardless of what 
+       * chars are already in there.
+      */
+      dispatch(addToEval(char));
+      dispatch(calculateResult());
+      // else if char is an operator
+    } else if (Object.keys(ops).filter(function (opKey) {
+      return ops[opKey].char === char;
+    }).length > 0) {
+      var newOper = ops[Object.keys(ops).filter(function (key) {
+        return ops[key].char === char;
+      })].oper;
+      // if evalArray is not empty
+      if (evalArray.length > 0) {
+        // if last item in eval is also an operator, remove it and replace
+        if (Object.keys(ops).filter(function (opKey) {
+          return ops[opKey].oper === evalArray[evalArray.length - 1];
+        }).length > 0) {
+          dispatch(popEval);
+          var oper = Object.keys(ops).filter(function (key) {
+            return ops[key].char === char;
+          });
+          dispatch(addToEval(newOper));
+          // otherwise just add it to eval
+        } else {
+          dispatch(addToEval(newOper));
+        }
       }
+      dispatch(calculateResult());
+    } else if (equals === char) {
+      dispatch(calculateResult());
+      dispatch(clearEval());
+    } else if (clear === char) {
+      dispatch(clearAll());
+    } else {
+      console.log("something went wrong in calc()");
     }
   };
 };
 
 var initialState = {
-  currNum: null,
-  prevNum: null,
-  operation: null,
-  result: 0
+  evalArray: [],
+  result: null
 };
 
 exports.default = function () {
@@ -20917,24 +20966,28 @@ exports.default = function () {
   var action = arguments[1];
 
   switch (action.type) {
-    case "CHANGE_CN":
+    case "ADD_TO_EVAL":
       return _extends({}, state, {
-        currNum: action.payload
+        // concat so we do not mutate the state
+        evalArray: state.evalArray.concat(action.payload)
       });
-    case "CHANGE_PN":
-      // return Object.assign({}, state, { prevNum: action.payload });
+    case "POP_EVAL":
       return _extends({}, state, {
-        prevNum: action.payload
+        // slice (not splice) so we do not mutate the state
+        evalArray: state.evalArray.slice(0, state.evalArray.length - 1)
+      });
+    case "CLEAR_All":
+      return _extends({}, state, {
+        evalArray: [],
+        result: null
+      });
+    case "CLEAR_EVAL":
+      return _extends({}, state, {
+        evalArray: []
       });
     case "SET_RESULT":
-      // return Object.assign({}, state, { result: action.payload });
       return _extends({}, state, {
         result: action.payload
-      });
-    case "SET_OPER":
-      // return Object.assign({}, state, { operation: action.payload });
-      return _extends({}, state, {
-        operation: action.payload
       });
     default:
       return state;
@@ -20963,7 +21016,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var store = (0, _redux.createStore)(_reducers2.default, (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)(_reduxThunk2.default)));
 exports.default = store;
-},{"redux":35,"redux-thunk":36,"redux-devtools-extension":34,"./reducers":9}],10:[function(require,module,exports) {
+},{"redux":34,"redux-thunk":36,"redux-devtools-extension":35,"./reducers":11}],9:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21001,19 +21054,51 @@ var AnswerBox = function (_Component) {
     key: "render",
     value: function render() {
       var styles = {
-        margin: "5px"
+        headers: {
+          margin: 0,
+          textAlign: "center"
+        },
+        inputs: {},
+        input: {
+          margin: "5px 5px 20px 5px"
+        }
       };
+      var currEval = this.props.currEval.length > 0 ? this.props.currEval.join(" ") : " - ";
       return _react2.default.createElement(
         "div",
-        { className: "columns is-mobile" },
-        _react2.default.createElement("input", {
-          style: styles,
-          className: "column input",
-          type: "text",
-          readOnly: true,
-          value: this.props.result
-        }),
-        _react2.default.createElement("input", { style: styles, className: "column input", type: "text", readOnly: true })
+        null,
+        _react2.default.createElement(
+          "div",
+          { style: styles.headers, className: "columns is-mobile" },
+          _react2.default.createElement(
+            "h4",
+            { className: "column label" },
+            "Current Equation:"
+          ),
+          _react2.default.createElement(
+            "h4",
+            { className: "column label" },
+            "Result:"
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { style: styles.inputs, className: "columns is-mobile" },
+          _react2.default.createElement("input", {
+            style: styles.input,
+            className: "column input",
+            type: "text",
+            value: currEval,
+            readOnly: true
+          }),
+          _react2.default.createElement("input", {
+            style: styles.input,
+            className: "column input",
+            type: "text",
+            readOnly: true,
+            value: this.props.result ? this.props.result : 0
+          })
+        )
       );
     }
   }]);
@@ -21022,13 +21107,13 @@ var AnswerBox = function (_Component) {
 }(_react.Component);
 
 exports.default = (0, _reactRedux.connect)(function (state) {
-  return { result: state.result };
+  return { result: state.result, currEval: state.evalArray };
 }, function (dispatch) {
   return { setResult: function setResult(value) {
       return dispatch((0, _reducers.setResult)(value));
     } };
 })(AnswerBox);
-},{"react":13,"react-redux":15,"../store/reducers":9}],7:[function(require,module,exports) {
+},{"react":14,"react-redux":15,"../store/reducers":11}],7:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -21097,7 +21182,7 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":4}],11:[function(require,module,exports) {
+},{"_css_loader":4}],10:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21119,11 +21204,11 @@ var _propTypes = require("prop-types");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reducers = require("../store/reducers");
-
 var _numsAndOps = require("./numsAndOps.scss");
 
 var _numsAndOps2 = _interopRequireDefault(_numsAndOps);
+
+var _reducers = require("../store/reducers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21175,13 +21260,13 @@ var NumsAndOpsBox = exports.NumsAndOpsBox = function (_Component) {
     var _this = _possibleConstructorReturn(this, (NumsAndOpsBox.__proto__ || Object.getPrototypeOf(NumsAndOpsBox)).call(this, props));
 
     _this.ops = {
-      leftParen: "(",
-      rightParen: ")",
-      percent: "%",
-      mult: "\xD7",
-      divide: "\xF7",
-      minus: "\u2796",
-      plus: "\u2795"
+      leftParen: { char: "(", oper: "(" },
+      rightParen: { char: ")", oper: ")" },
+      percent: { char: "%", oper: "%" },
+      mult: { char: "\xD7", oper: "*" },
+      divide: { char: "\xF7", oper: "/" },
+      minus: { char: "\u2796", oper: "-" },
+      plus: { char: "\u2795", oper: "+" }
     };
     _this.nums = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."];
     _this.equals = "=";
@@ -21193,52 +21278,12 @@ var NumsAndOpsBox = exports.NumsAndOpsBox = function (_Component) {
   _createClass(NumsAndOpsBox, [{
     key: "calculate",
     value: function calculate(char) {
-      var _this2 = this;
-
-      console.log(char);
-      var opers = Object.keys(this.ops).map(function (key) {
-        return _this2.ops[key];
-      });
-      opers.forEach(function (op) {
-        if (char === op) {
-          console.log("oper found");
-          if (_this2.props.state.currNum !== null) {
-            _this2.props.setOper(char);
-          }
-        }
-      });
-      this.nums.forEach(function (num) {
-        if (char === num) {
-          console.log("num found");
-          var num1 = _this2.props.state.currNum;
-          var num2 = _this2.props.state.prevNum;
-          var oper = _this2.props.state.operation;
-
-          if (num1 === null) {
-            _this2.props.setCurrNum(char);
-          } else if (num1 !== null && oper === null) {
-            _this2.props.setCurrNum(num1 + char);
-          } else if (num1 !== null && oper !== null) {
-            _this2.props.setPrevNum(num1);
-            _this2.props.setCurrNum(char);
-          }
-        }
-      });
-      if (char === this.clear) {
-        console.log("clear found");
-        this.props.setResult(0);
-        this.props.setCurrNum(null);
-        this.props.setPrevNum(null);
-        this.props.setOper(null);
-      }
-      if (char === this.equals) {
-        console.log("equals found");
-      }
+      this.props.calc(char);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var calculate = this.calculate;
       return _react2.default.createElement(
@@ -21249,26 +21294,26 @@ var NumsAndOpsBox = exports.NumsAndOpsBox = function (_Component) {
           { className: "columns is-mobile" },
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.ops.leftParen);
+              return _this2.calculate(_this2.ops.leftParen.char);
             },
-            char: this.ops.leftParen
+            char: this.ops.leftParen.char
           }),
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.ops.rightParen);
+              return _this2.calculate(_this2.ops.rightParen.char);
             },
-            char: this.ops.rightParen
+            char: this.ops.rightParen.char
           }),
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.ops.percent);
+              return _this2.calculate(_this2.ops.percent.char);
             },
-            char: this.ops.percent
+            char: this.ops.percent.char
           }),
           _react2.default.createElement(Btn, {
             style: { color: "blue" },
             onClick: function onClick() {
-              return _this3.calculate(_this3.clear);
+              return _this2.calculate(_this2.clear);
             },
             char: this.clear
           })
@@ -21276,68 +21321,84 @@ var NumsAndOpsBox = exports.NumsAndOpsBox = function (_Component) {
         _react2.default.createElement(
           "div",
           { className: "columns is-mobile" },
-          ["7", "8", "9"].map(function (num) {
-            return _react2.default.createElement(Btn, { onClick: function onClick() {
+          ["7", "8", "9"].map(function (num, index) {
+            return _react2.default.createElement(Btn, {
+              key: index + "-789",
+              onClick: function onClick() {
                 return calculate(num);
-              }, char: num });
+              },
+              char: num
+            });
           }),
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.ops.mult);
+              return _this2.calculate(_this2.ops.mult.char);
             },
-            char: this.ops.mult
+            char: this.ops.mult.char
           })
         ),
         _react2.default.createElement(
           "div",
           { className: "columns is-mobile" },
-          ["4", "5", "6"].map(function (num) {
-            return _react2.default.createElement(Btn, { onClick: function onClick() {
+          ["4", "5", "6"].map(function (num, index) {
+            return _react2.default.createElement(Btn, {
+              key: index + "-456",
+              onClick: function onClick() {
                 return calculate(num);
-              }, char: num });
+              },
+              char: num
+            });
           }),
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.ops.divide);
+              return _this2.calculate(_this2.ops.divide.char);
             },
-            char: this.ops.divide
+            char: this.ops.divide.char
           })
         ),
         _react2.default.createElement(
           "div",
           { className: "columns is-mobile" },
-          ["1", "2", "3"].map(function (num) {
-            return _react2.default.createElement(Btn, { onClick: function onClick() {
+          ["1", "2", "3"].map(function (num, index) {
+            return _react2.default.createElement(Btn, {
+              key: index + "-123",
+              onClick: function onClick() {
                 return calculate(num);
-              }, char: num });
+              },
+              char: num
+            });
           }),
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.ops.minus);
+              return _this2.calculate(_this2.ops.minus.char);
             },
-            char: this.ops.minus
+            char: this.ops.minus.char
           })
         ),
         _react2.default.createElement(
           "div",
           { className: "columns is-mobile" },
-          ["0", "."].map(function (num) {
-            return _react2.default.createElement(Btn, { onClick: function onClick() {
+          ["0", "."].map(function (num, index) {
+            return _react2.default.createElement(Btn, {
+              key: index + "-0.",
+              onClick: function onClick() {
                 return calculate(num);
-              }, char: num });
+              },
+              char: num
+            });
           }),
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.equals);
+              return _this2.calculate(_this2.equals);
             },
             style: { backgroundColor: "blue", color: "white" },
             char: this.equals
           }),
           _react2.default.createElement(Btn, {
             onClick: function onClick() {
-              return _this3.calculate(_this3.ops.plus);
+              return _this2.calculate(_this2.ops.plus.char);
             },
-            char: this.ops.plus
+            char: this.ops.plus.char
           })
         )
       );
@@ -21347,25 +21408,20 @@ var NumsAndOpsBox = exports.NumsAndOpsBox = function (_Component) {
   return NumsAndOpsBox;
 }(_react.Component);
 
-exports.default = (0, _reactRedux.connect)(function (state) {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    calc: function calc(char) {
+      return dispatch((0, _reducers.calc)(char));
+    }
+  };
+};
+var mapStateToProps = function mapStateToProps(state) {
   return {
     state: state
   };
-}, function (dispatch) {
-  return {
-    setCurrNum: function setCurrNum(newNum) {
-      return dispatch((0, _reducers.setCurrNum)(newNum));
-    },
-    setOper: function setOper(value) {
-      return dispatch((0, _reducers.setOper)(value));
-    },
-    setPrevNum: function setPrevNum(value) {
-      return dispatch((0, _reducers.setPrevNum)(value));
-    },
-    calculateResult: _reducers.calculateResult
-  };
-})(NumsAndOpsBox);
-},{"react":13,"react-redux":15,"prop-types":43,"../store/reducers":9,"./numsAndOps.scss":12}],8:[function(require,module,exports) {
+};
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NumsAndOpsBox);
+},{"react":14,"react-redux":15,"prop-types":43,"./numsAndOps.scss":12,"../store/reducers":11}],8:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -21436,7 +21492,7 @@ exports.default = (0, _reactRedux.connect)(function (state) {
 }, function (dispatch) {
   return {};
 })(App);
-},{"react":13,"react-redux":15,"./components/AnswerBox":10,"./components/NumsAndOpsBox":11,"./app.scss":8}],2:[function(require,module,exports) {
+},{"react":14,"react-redux":15,"./components/AnswerBox":9,"./components/NumsAndOpsBox":10,"./app.scss":8}],3:[function(require,module,exports) {
 "use strict";
 
 var _react = require("react");
@@ -21464,7 +21520,7 @@ _reactDom2.default.render(_react2.default.createElement(
   { store: _store2.default },
   _react2.default.createElement(_app2.default, null)
 ), document.getElementById("root"));
-},{"react":13,"react-dom":14,"react-redux":15,"./store/store.js":5,"./app":6}],79:[function(require,module,exports) {
+},{"react":14,"react-dom":13,"react-redux":15,"./store/store.js":5,"./app":6}],79:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -21484,7 +21540,7 @@ module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
-  var ws = new WebSocket('ws://' + hostname + ':' + '33571' + '/');
+  var ws = new WebSocket('ws://' + hostname + ':' + '33115' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -21585,5 +21641,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[79,2])
+},{}]},{},[79,3])
 //# sourceMappingURL=/dist/0798cd1821d9186072c822c1159bf79c.map
