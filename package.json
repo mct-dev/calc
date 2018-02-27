@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
+  "home": "https://mct-dev.github.io/calc",
   "scripts": {
     "test": "jest",
     "start": "parcel ./index.html",
@@ -25,7 +26,5 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0"
   },
-  "dependencies": {
-    "gh-pages": "^1.1.0"
-  }
+  "dependencies": {}
 }
