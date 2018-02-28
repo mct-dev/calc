@@ -7,7 +7,9 @@
   "scripts": {
     "test": "jest",
     "start": "parcel ./index.html",
-    "build": "parcel build ./index.html"
+    "build": "parcel build ./index.html",
+    "clean": "rm -rf dist/",
+    "push-to-gh-pages": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
   "license": "ISC",
